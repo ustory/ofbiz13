@@ -31,10 +31,10 @@
     <test-suite loader="main" location="testdef/WorkspaceTests.xml"/>
 
     <!-- web applications; will be mounted when using the embedded container -->
-    <webapp name="wrkspace"
+    <webapp name="workspace"
         title="Workspace"
         server="default-server"
-        location="webapp/wrkspace"
+        location="webapp/workspace"
         base-permission="OFBTOOLS,WORKSPACE"
-        mount-point="/wrkspace"/>
+        mount-point="/workspace"/>
 </ofbiz-component>
