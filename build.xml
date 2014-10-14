@@ -418,6 +418,7 @@ under the License.
             <jvmarg value="${memory.maxpermsize.param}"/>
             <arg value="start"/>
             <arg value="-portoffset=${portoffset}"/>
+        	<jvmarg value="-Dfile.encoding=UTF-8"/>
         </java>
     </target>
     <target name="start-batch"
@@ -428,6 +429,7 @@ under the License.
             <jvmarg value="${memory.maxpermsize.param}"/>
             <arg value="start-batch"/>
             <arg value="-portoffset=${portoffset}"/>
+        	<jvmarg value="-Dfile.encoding=UTF-8"/>
         </java>
     </target>
     <target name="start-debug" depends="stop,build"
@@ -442,6 +444,7 @@ under the License.
             <jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8091"/>
             <arg value="start-debug"/>
             <arg value="-portoffset=${portoffset}"/>
+        	<jvmarg value="-Dfile.encoding=UTF-8"/>
         </java>
     </target>
     <target name="start-pos"
