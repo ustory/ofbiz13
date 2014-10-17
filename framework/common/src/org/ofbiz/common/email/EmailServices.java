@@ -581,7 +581,7 @@ public class EmailServices {
 
         Map<String, Object> result = ServiceUtil.returnSuccess();
         Map<String, Object> sendMailResult;
-        Boolean hideInLog = (Boolean) serviceContext.get("hideInLog");
+        Boolean hideInLog = (Boolean) serviceContext.remove("hideInLog");
         hideInLog = hideInLog == null ? false : hideInLog;
         try {
             if (!hideInLog) {
