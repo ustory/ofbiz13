@@ -30,4 +30,12 @@
             </widgets>
         </section>
     </screen>
+    
+    <screen name="emailScreeen">
+        <section>
+            <widgets>
+            	<platform-specific><html><html-template location="component://workspace/webapp/workspace/html/emailContent.ftl"/></html></platform-specific>
+            </widgets>
+        </section>
+    </screen>
 </screens>

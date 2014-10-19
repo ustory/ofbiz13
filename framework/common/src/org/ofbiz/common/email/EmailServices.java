@@ -167,6 +167,9 @@ public class EmailServices {
             if (UtilValidate.isEmpty(sendVia)) {
                 sendVia = EntityUtilProperties.getPropertyValue("general.properties", "mail.smtp.relay.host", "localhost", delegator);
             }
+            if (UtilValidate.isEmpty(sendFrom)) {
+            	sendFrom = EntityUtilProperties.getPropertyValue("general.properties", "defaultFromEmailAddress", delegator);
+            }
             if (UtilValidate.isEmpty(authUser)) {
                 authUser = EntityUtilProperties.getPropertyValue("general.properties", "mail.smtp.auth.user", delegator);
             }
