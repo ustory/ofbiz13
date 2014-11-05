@@ -10,4 +10,7 @@
 <a href="http://127.0.0.1:8080/workspace/urlRewrite_77777.html">http://127.0.0.1:8080/workspace/urlRewrite_77777.html</a>
 【此链接因找不到匹配的重写规则，会被重定向到该组件的main页面，这是ContextFilter作用的结果】
 <hr>
+<h3>过滤器解析静态化URL</h3>
+<a href="http://127.0.0.1:8080/workspace/filter/56789.html">http://127.0.0.1:8080/workspace/filter/56789.html</a>
+【此链接会被解析为：http://127.0.0.1:8080/workspace/control/urlRewrite?id=56789】
 <#if parameters.id?has_content><h4>参数：<font color="blue">${(parameters.id)!}</font></h4></#if>
