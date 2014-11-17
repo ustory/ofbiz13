@@ -7,4 +7,10 @@
         <from>^/urlRewrite-([0-9|a-z|A-Z]*).html$</from>
         <to type="forward">/control/urlRewrite?id=$1</to>
     </rule>
+    
+    <rule>
+        <note>subDomain rewrite test</note>
+        <from>^/urlRewrite-([0-9|a-z|A-Z]*).html$</from>
+        <to type="forward">/control/urlRewrite?id=$1</to>
+    </rule>
 </urlrewrite>
