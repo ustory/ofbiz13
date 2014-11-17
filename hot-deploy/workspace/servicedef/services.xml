@@ -11,4 +11,8 @@
         </description>
     </service> 
     
+    <service name="indexProduct" engine="java" location="com.zxx.SolrSearch" invoke="indexProduct" default-entity-name="Product">
+    	<auto-attributes mode="IN" include="pk"></auto-attributes>
+    	<auto-attributes mode="IN" include="nonpk" optional="true"></auto-attributes>
+    </service>
 </services>

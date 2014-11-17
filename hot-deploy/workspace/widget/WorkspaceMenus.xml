@@ -4,5 +4,6 @@
         <menu-item name="main" title="${uiLabelMap.CommonMain}"><link target="main"/></menu-item>
         <menu-item name="ipLocation" title="IP地理位置"><link target="ipLocation"/></menu-item>
         <menu-item name="urlRewrite" title="URL重写"><link target="urlRewrite"/></menu-item>
+        <menu-item name="solr" title="Solr检索"><link target="solr"/></menu-item>
     </menu>
 </menus>

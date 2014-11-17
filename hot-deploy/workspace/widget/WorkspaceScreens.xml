@@ -54,4 +54,19 @@
         </section>
     </screen>
     
+    <screen name="solr">
+        <section>
+            <actions>
+                <set field="headerItem" value="solr"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="WorkspaceCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                    	<platform-specific><html><html-template location="component://workspace/webapp/workspace/html/solr.ftl"/></html></platform-specific>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+    
 </screens>
