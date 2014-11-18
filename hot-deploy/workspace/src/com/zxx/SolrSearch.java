@@ -18,23 +18,38 @@ public class SolrSearch {
 
 	public static final String module = SolrSearch.class.getName();
 	
-	public static Map<String, Object> indexProduct(DispatchContext dctx, Map<String, Object> context){
+	public static Map<String, Object> updateSolrIndex(DispatchContext dctx, Map<String, Object> context){
 		Delegator delegator = dctx.getDelegator();
-        String productId = (String) context.get("productId");
  
         // collection1 below is the name of the core we have defined in solr
         String solrHost = getSolrHost(delegator, "collection1");
- 
+
         HttpSolrServer server = new HttpSolrServer(solrHost);
         SolrDocument solrDocument = new SolrDocument();
-        solrDocument.addField("id", productId);
-        solrDocument.addField("productId", productId);
-        solrDocument.addField("productName", context.get("productName"));
-        solrDocument.addField("brandName", context.get("brandName"));
-        solrDocument.addField("internalName", context.get("internalName"));
-        solrDocument.addField("proDescription", context.get("description"));
+        solrDocument.addField("id", context.get("id"));
+        solrDocument.addField("name", context.get("name"));
+        solrDocument.addField("type", context.get("type"));
+        solrDocument.addField("description", context.get("description"));
         try {
             server.add(ClientUtils.toSolrInputDocument(solrDocument));
+            server.commit();
+        } catch (SolrServerException e) {
+        	Debug.logError(e.toString(), module);
+        } catch (IOException e) {
+        	Debug.logError(e.toString(), module);
+        }
+        return ServiceUtil.returnSuccess();
+	}
+	
+	public static Map<String, Object> removeSolrIndex(DispatchContext dctx, Map<String, Object> context){
+		Delegator delegator = dctx.getDelegator();
+ 
+        // collection1 below is the name of the core we have defined in solr
+        String solrHost = getSolrHost(delegator, "collection1");
+
+        HttpSolrServer server = new HttpSolrServer(solrHost);
+        try {
+        	server.deleteByQuery( "id:"+ context.get("id"));
             server.commit();
         } catch (SolrServerException e) {
         	Debug.logError(e.toString(), module);

@@ -11,7 +11,11 @@
         </description>
     </service> 
     
-    <service name="indexProduct" engine="java" location="com.zxx.SolrSearch" invoke="indexProduct" default-entity-name="Product">
+    <service name="updateSolrIndex" engine="java" location="com.zxx.SolrSearch" invoke="updateSolrIndex" default-entity-name="Solr">
+    	<auto-attributes mode="IN" include="pk"></auto-attributes>
+    	<auto-attributes mode="IN" include="nonpk" optional="true"></auto-attributes>
+    </service>
+    <service name="removeSolrIndex" engine="java" location="com.zxx.SolrSearch" invoke="removeSolrIndex" default-entity-name="Solr">
     	<auto-attributes mode="IN" include="pk"></auto-attributes>
     	<auto-attributes mode="IN" include="nonpk" optional="true"></auto-attributes>
     </service>

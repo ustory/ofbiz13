@@ -8,5 +8,12 @@
     <description>None</description>
     <copyright></copyright>
     <version></version>
-
+	<entity entity-name="Solr" package-name="com.zxx.Solr">
+		<description>Solr</description>
+		<field name="id" type="id"></field>
+		<field name="name" type="id"></field>
+		<field name="type" type="id"></field>
+		<field name="description" type="id"></field>
+		<prim-key field="id"/>
+	</entity>
 </entitymodel>
