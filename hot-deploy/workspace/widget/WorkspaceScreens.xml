@@ -58,6 +58,7 @@
         <section>
             <actions>
                 <set field="headerItem" value="solr"/>
+                <script location="component://workspace/webapp/workspace/WEB-INF/action/solrSearch.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="WorkspaceCommonDecorator" location="${parameters.mainDecoratorLocation}">
