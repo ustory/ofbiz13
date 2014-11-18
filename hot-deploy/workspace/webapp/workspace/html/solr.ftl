@@ -1,7 +1,7 @@
 <h1>Solr检索</h1>
 <form name="solr" action="<@ofbizUrl>solr</@ofbizUrl>" method="post">
 	<lable>关键字：</lable>
-	<input name="keyword">
+	<input name="keyword" value="${(parameters.keyword)!}">
 	<input type="submit" value="查询">
 </form>
 ${searchResult}<hr>
